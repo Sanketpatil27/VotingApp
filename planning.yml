@@ -1,0 +1,42 @@
+Voting Application
+
+A functionality where user can give vote to the given set of candidates
+
+
+functionality:
+1. user sign-in/sign-up
+2. see the list of candidates
+3. One time voting
+4. there is route which shows the list of candidates and their live vote counts in sorted order
+5. User data must contain their unique id proof (adhar card number)
+6. there should be one admin who can only maintain the table of candidates and who can't able to vote at all
+7. Users can change their password 
+8. user can login only with adhar card number and password
+9. Admin can't vote
+
+
+--------------------------------------------------
+
+Routes
+
+User Authenticaton:
+  /signup: POST - create a new user accouts 
+  /login: POST - Log in to an existing account, [aadharcard  number + password]
+
+User Profile:
+  /profile: GET - get user information
+  /profile/password: PUT - change the user's password
+
+Candidates:
+  /candidates: GET  - Get the list of candidates. 
+  /candidates: POST - create Candidate. 
+  /candidates/:candidateID: PUT - Update candidate information
+
+Voting: 
+  /vote/:candidateId: POST - vote for a specific candidate.
+  /vote/counts: GET - get the list of all candidates sorted by their vote counts.
+
+Admin candidate Management: 
+  /candidates: POST - create a new Candidate
+  /candidates/:candidateId: PUT - Update an existing candidate.
+  /candidates/:candidateId: DELETE - Delete a candidate from the list
